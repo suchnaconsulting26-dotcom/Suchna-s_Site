@@ -9,6 +9,14 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Routes, Route, Link } from 'react-router-dom'
+import Services from './Services.jsx'
+import WebDevelopment from './WebDevelopment.jsx'
+import SaaSDevelopment from './SaaSDevelopment.jsx'
+import Ecommerce from './Ecommerce.jsx'
+import UIUXBranding from './UIUXBranding.jsx'
+import DigitalMarketing from './DigitalMarketing.jsx'
+import Consulting from './Consulting.jsx'
 
 export default function SuchnaSite() {
   const services = [
@@ -38,31 +46,34 @@ export default function SuchnaSite() {
   ]
 
   return (
-    <div className="min-h-screen bg-neutral-900 text-white antialiased">
-      {/* NAV */}
-      <header className="sticky top-0 z-40 backdrop-blur bg-black/40 border-b border-white/5">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-3">
-            <img src="/logo.png" alt="Suchna Tech & Solutions" className="h-10 w-30 object-contain" />
-            <div>
-              <div className="text-xl font-extrabold tracking-tight">Suchna Tech & Solutions</div>
-              <div className="text-xs text-white/60 -mt-1">Simple. Smart. Suchna.</div>
+    <Routes>
+      <Route path="/" element={
+        <div className="min-h-screen bg-neutral-900 text-white antialiased">
+          {/* NAV */}
+          <header className="sticky top-0 z-40 backdrop-blur bg-black/40 border-b border-white/5">
+            <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+              <a href="#home" className="flex items-center gap-3">
+                <img src="/logo.png" alt="Suchna Tech & Solutions" className="h-10 w-30 object-contain" />
+                <div>
+                  <div className="text-xl font-extrabold tracking-tight">Suchna Tech & Solutions</div>
+                  <div className="text-xs text-white/60 -mt-1">Simple. Smart. Suchna.</div>
+                </div>
+              </a>
+
+              <nav className="hidden md:flex gap-6 items-center">
+                <Link to="/" className="hover:text-teal-300 transition">Home</Link>
+                <Link to="/services" className="hover:text-teal-300 transition">Services</Link>
+                <a href="#work" className="hover:text-teal-300 transition">Work</a>
+                <a href="#about" className="hover:text-teal-300 transition">About</a>
+                <a href="#contact" className="px-4 py-2 rounded-md bg-teal-500 text-black font-semibold hover:scale-105 transform transition">Contact</a>
+              </nav>
+
+              <button className="md:hidden p-2 rounded-md border border-white/10">☰</button>
             </div>
-          </a>
+          </header>
 
-          <nav className="hidden md:flex gap-6 items-center">
-            <a href="#services" className="hover:text-teal-300 transition">Services</a>
-            <a href="#work" className="hover:text-teal-300 transition">Work</a>
-            <a href="#about" className="hover:text-teal-300 transition">About</a>
-            <a href="#contact" className="px-4 py-2 rounded-md bg-teal-500 text-black font-semibold hover:scale-105 transform transition">Contact</a>
-          </nav>
-
-          <button className="md:hidden p-2 rounded-md border border-white/10">☰</button>
-        </div>
-      </header>
-
-      {/* HERO */}
-      <main id="home">
+          {/* HERO */}
+          <main id="home">
         <section className="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
           <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.6 }} className="flex-1">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">We build bold digital products that grow businesses.</h1>
@@ -223,8 +234,17 @@ export default function SuchnaSite() {
         </footer>
       </main>
 
-      {/* FLOATING BADGE */}
-      <a href="#contact" className="fixed bottom-6 right-6 bg-teal-500 text-black px-4 py-2 rounded-full shadow-xl font-semibold hover:scale-105 transform transition">Start a Project</a>
-    </div>
+            {/* FLOATING BADGE */}
+            <a href="#contact" className="fixed bottom-6 right-6 bg-teal-500 text-black px-4 py-2 rounded-full shadow-xl font-semibold hover:scale-105 transform transition">Start a Project</a>
+          </div>
+        } />
+      <Route path="/services" element={<Services />} />
+      <Route path="/services/web-development" element={<WebDevelopment />} />
+      <Route path="/services/saas-development" element={<SaaSDevelopment />} />
+      <Route path="/services/e-commerce" element={<Ecommerce />} />
+      <Route path="/services/ui-ux-branding" element={<UIUXBranding />} />
+      <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+      <Route path="/services/consulting" element={<Consulting />} />
+    </Routes>
   )
 }
