@@ -1,342 +1,398 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaCode, FaGlobe, FaShoppingCart, FaPalette, FaChartLine, FaUsers, FaArrowRight, FaCheck, FaLightbulb, FaPalette as FaDesign, FaRocket, FaCog } from 'react-icons/fa';
+import { useTheme } from './ThemeContext';
+import { FaCode, FaGlobe, FaMicrochip, FaPalette, FaChartLine, FaUsers, FaArrowRight, FaCheck, FaLightbulb, FaPalette as FaDesign, FaRocket, FaCog } from 'react-icons/fa';
 
 const WebDevelopment = () => {
-  const benefits = [
-    {
-      icon: <FaRocket />,
-      title: 'Performance First',
-      desc: 'Lightning-fast loading times and optimized user experiences'
-    },
-    {
-      icon: <FaCog />,
-      title: 'Scalable Architecture',
-      desc: 'Built to grow with your business needs'
-    },
-    {
-      icon: <FaDesign />,
-      title: 'Modern Design',
-      desc: 'Clean, responsive interfaces that convert visitors'
-    }
-  ];
+    const { theme } = useTheme();
 
-  const process = [
-    {
-      step: '01',
-      title: 'Discover',
-      desc: 'We analyze your requirements, target audience, and business goals to create a strategic roadmap.'
-    },
-    {
-      step: '02',
-      title: 'Design',
-      desc: 'Crafting pixel-perfect UI/UX designs with user-centered approach and modern aesthetics.'
-    },
-    {
-      step: '03',
-      title: 'Develop',
-      desc: 'Building robust, scalable web applications using cutting-edge technologies and best practices.'
-    },
-    {
-      step: '04',
-      title: 'Deliver',
-      desc: 'Thorough testing, deployment, and ongoing support to ensure your success.'
-    }
-  ];
+    const benefits = [
+        {
+            icon: <FaRocket />,
+            title: 'Performance First',
+            desc: 'Lightning-fast loading times and optimized user experiences'
+        },
+        {
+            icon: <FaCog />,
+            title: 'Scalable Architecture',
+            desc: 'Built to grow with your business needs'
+        },
+        {
+            icon: <FaDesign />,
+            title: 'Modern Design',
+            desc: 'Clean, responsive interfaces that convert visitors'
+        }
+    ];
 
-  const features = [
-    'Responsive Design',
-    'SEO Optimization',
-    'Performance Optimization',
-    'Security Implementation',
-    'CMS Integration',
-    'E-commerce Solutions',
-    'API Development',
-    'Database Design',
-    'Cloud Deployment',
-    'Maintenance & Support'
-  ];
+    const process = [
+        {
+            step: '01',
+            title: 'Discover',
+            desc: 'We analyze your requirements, target audience, and business goals to create a strategic roadmap.'
+        },
+        {
+            step: '02',
+            title: 'Design',
+            desc: 'Crafting pixel-perfect UI/UX designs with user-centered approach and modern aesthetics.'
+        },
+        {
+            step: '03',
+            title: 'Develop',
+            desc: 'Building robust, scalable web applications using cutting-edge technologies and best practices.'
+        },
+        {
+            step: '04',
+            title: 'Deliver',
+            desc: 'Thorough testing, deployment, and ongoing support to ensure your success.'
+        }
+    ];
 
-  const relatedServices = [
-    {
-      title: 'SaaS Development',
-      icon: <FaGlobe />,
-      link: '/services/saas-development',
-      gradient: 'from-green-400 to-green-600'
-    },
-    {
-      title: 'E-commerce',
-      icon: <FaShoppingCart />,
-      link: '/services/e-commerce',
-      gradient: 'from-purple-400 to-purple-600'
-    },
-    {
-      title: 'UI/UX & Branding',
-      icon: <FaPalette />,
-      link: '/services/ui-ux-branding',
-      gradient: 'from-pink-400 to-pink-600'
-    }
-  ];
+    const features = [
+        'Responsive Design',
+        'SEO Optimization',
+        'Performance Optimization',
+        'Security Implementation',
+        'CMS Integration',
+        'AI Integration & Automation',
+        'API Development',
+        'Database Design',
+        'Cloud Deployment',
+        'Maintenance & Support'
+    ];
 
-  const faqs = [
-    {
-      question: 'What technologies do you use for web development?',
-      answer: 'We use modern technologies like React, Next.js, Node.js, and cloud platforms. We choose the best stack based on your project requirements.'
-    },
-    {
-      question: 'How long does a typical web development project take?',
-      answer: 'Project timelines vary based on complexity. Simple websites take 2-4 weeks, while complex web applications can take 8-16 weeks.'
-    },
-    {
-      question: 'Do you provide ongoing maintenance and support?',
-      answer: 'Yes, we offer comprehensive maintenance packages including updates, security patches, performance monitoring, and technical support.'
-    },
-    {
-      question: 'Can you work with existing websites or applications?',
-      answer: 'Absolutely. We can audit, refactor, and enhance existing websites, or integrate new features into current applications.'
-    }
-  ];
+    const relatedServices = [
+        {
+            title: 'SaaS Development',
+            icon: <FaGlobe />,
+            link: '/services/saas-development',
+            gradient: 'from-green-400 to-green-600'
+        },
+        {
+            title: 'AI Integration',
+            icon: <FaMicrochip />,
+            link: '/services/ai-integration',
+            gradient: 'from-purple-400 to-purple-600'
+        },
+        {
+            title: 'UI/UX & Branding',
+            icon: <FaPalette />,
+            link: '/services/ui-ux-branding',
+            gradient: 'from-pink-400 to-pink-600'
+        }
+    ];
 
-  return (
-    <div className="min-h-screen bg-neutral-900 text-white antialiased">
-      {/* NAV */}
-      <header className="sticky top-0 z-40 backdrop-blur bg-black/40 border-b border-white/5">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <img src="/logo.png" alt="Suchna Tech & Solutions" className="h-10 w-30 object-contain" />
-            <div>
-              <div className="text-xl font-extrabold tracking-tight">Suchna Tech & Solutions</div>
-              <div className="text-xs text-white/60 -mt-1">Simple. Smart. Suchna.</div>
-            </div>
-          </Link>
+    const faqs = [
+        {
+            question: 'What technologies do you use for web development?',
+            answer: 'We use modern technologies like React, Next.js, Node.js, and cloud platforms. We choose the best stack based on your project requirements.'
+        },
+        {
+            question: 'How long does a typical web development project take?',
+            answer: 'Project timelines vary based on complexity. Simple websites take 2-4 weeks, while complex web applications can take 8-16 weeks.'
+        },
+        {
+            question: 'Do you provide ongoing maintenance and support?',
+            answer: 'Yes, we offer comprehensive maintenance packages including updates, security patches, performance monitoring, and technical support.'
+        },
+        {
+            question: 'Can you work with existing websites or applications?',
+            answer: 'Absolutely. We can audit, refactor, and enhance existing websites, or integrate new features into current applications.'
+        }
+    ];
 
-          <nav className="hidden md:flex gap-6 items-center">
-            <Link to="/" className="hover:text-teal-300 transition">Home</Link>
-            <Link to="/services" className="hover:text-teal-300 transition">Services</Link>
-            <a href="/#work" className="hover:text-teal-300 transition">Work</a>
-            <a href="/#about" className="hover:text-teal-300 transition">About</a>
-            <a href="/#contact" className="px-4 py-2 rounded-md bg-teal-500 text-black font-semibold hover:scale-105 transform transition">Contact</a>
-          </nav>
+    return (
+        <div className="min-h-screen bg-neutral-900 text-white antialiased">
+            {/* NAV */}
+            <header className="sticky top-0 z-40 backdrop-blur bg-black/40 border-b border-white/5">
+                <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+                    <Link to="/" className="flex items-center gap-3">
+                        <img src="/logo.png" alt="Suchna Tech & Solutions" className="h-10 w-30 object-contain" />
+                        <div>
+                            <div className="text-xl font-extrabold tracking-tight">Suchna Tech & Solutions</div>
+                            <div className="text-xs text-white/60 -mt-1">Simple. Smart. Suchna.</div>
+                        </div>
+                    </Link>
 
-          <button className="md:hidden p-2 rounded-md border border-white/10">☰</button>
-        </div>
-      </header>
+                    <nav className="hidden md:flex gap-6 items-center">
+                        <Link to="/" className="hover:text-teal-300 transition">Home</Link>
+                        <Link to="/services" className="hover:text-teal-300 transition">Services</Link>
+                        <a href="/#work" className="hover:text-teal-300 transition">Work</a>
+                        <a href="/#about" className="hover:text-teal-300 transition">About</a>
+                        <a href="/#contact" className="px-4 py-2 rounded-md bg-teal-500 text-black font-semibold hover:scale-105 transform transition">Contact</a>
+                    </nav>
 
-      {/* BREADCRUMB */}
-      <div className="max-w-6xl mx-auto px-6 py-4">
-        <nav className="text-sm text-white/60">
-          <Link to="/" className="hover:text-teal-300 transition">Home</Link>
-          <span className="mx-2">/</span>
-          <Link to="/services" className="hover:text-teal-300 transition">Services</Link>
-          <span className="mx-2">/</span>
-          <span className="text-white">Web Development</span>
-        </nav>
-      </div>
-
-      {/* HERO */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
-              <FaCode className="text-white text-3xl" />
-            </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
-              Web Development
-            </h1>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Custom websites and web applications built with modern technologies, delivering exceptional user experiences and measurable results.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* BENEFITS */}
-      <section className="py-20 px-6 border-t border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold mb-4">Why Choose Our Web Development Services?</h2>
-            <p className="text-white/70 max-w-2xl mx-auto">We combine technical expertise with creative design to build websites that not only look great but perform exceptionally.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
-                  <div className="text-white text-2xl">{benefit.icon}</div>
+                    <button className="md:hidden p-2 rounded-md border border-white/10">☰</button>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                <p className="text-white/70">{benefit.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </header>
 
-      {/* PROCESS */}
-      <section className="py-20 px-6 border-t border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold mb-4">Our Development Process</h2>
-            <p className="text-white/70 max-w-2xl mx-auto">A proven methodology that ensures quality, efficiency, and successful project delivery.</p>
-          </div>
+            {/* BREADCRUMB */}
+            <div className="max-w-6xl mx-auto px-6 py-4">
+                <nav className="text-sm text-white/60">
+                    <Link to="/" className="hover:text-teal-300 transition">Home</Link>
+                    <span className="mx-2">/</span>
+                    <Link to="/services" className="hover:text-teal-300 transition">Services</Link>
+                    <span className="mx-2">/</span>
+                    <span className="text-white">Web Development</span>
+                </nav>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((step, index) => (
-              <motion.div
-                key={step.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-12 h-12 mx-auto mb-4 bg-teal-500 text-black rounded-full flex items-center justify-center font-bold text-lg">
-                  {step.step}
+            {/* HERO */}
+            <section className="py-20 px-6">
+                <div className="max-w-6xl mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+                            <FaCode className="text-white text-3xl" />
+                        </div>
+                        <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+                            Web Development
+                        </h1>
+                        <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                            Custom websites and web applications built with modern technologies, delivering exceptional user experiences and measurable results.
+                        </p>
+                    </motion.div>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-white/70 text-sm">{step.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </section>
 
-      {/* FEATURES */}
-      <section className="py-20 px-6 border-t border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-extrabold mb-6">Essential Features We Deliver</h2>
-              <p className="text-white/70 mb-8">Every web development project includes comprehensive features and best practices to ensure success.</p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={feature}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.05 }}
-                    className="flex items-center gap-3"
-                  >
-                    <FaCheck className="text-teal-400 text-sm" />
-                    <span className="text-white/80">{feature}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-neutral-800 to-neutral-700 rounded-xl p-8 border border-white/5"
-            >
-              <h3 className="text-xl font-bold mb-4">Ready to Start Your Web Development Project?</h3>
-              <p className="text-white/70 mb-6">Let's discuss your vision and create something amazing together.</p>
-              <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-black font-semibold rounded-lg hover:scale-105 transition">
-                Start Your Web Development Project
-                <FaArrowRight />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* RELATED SERVICES */}
-      <section className="py-20 px-6 border-t border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold mb-4">Related Services</h2>
-            <p className="text-white/70 max-w-2xl mx-auto">Explore complementary services that can enhance your web development project.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {relatedServices.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group cursor-pointer"
-              >
-                <Link to={service.link}>
-                  <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 h-full hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
-                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <div className="text-white text-xl">
-                        {service.icon}
-                      </div>
+            {/* BENEFITS */}
+            <section className="py-20 px-6 border-t border-white/5">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-extrabold mb-4">Why Choose Our Web Development Services?</h2>
+                        <p className="text-white/70 max-w-2xl mx-auto">We combine technical expertise with creative design to build websites that not only look great but perform exceptionally.</p>
                     </div>
-                    <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
-                    <div className="flex items-center text-blue-400 font-medium group-hover:text-blue-300 transition-colors duration-300">
-                      Learn More
-                      <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {benefits.map((benefit, index) => (
+                            <motion.div
+                                key={benefit.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className="text-center"
+                            >
+                                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+                                    <div className="text-white text-2xl">{benefit.icon}</div>
+                                </div>
+                                <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
+                                <p className="text-white/70">{benefit.desc}</p>
+                            </motion.div>
+                        ))}
                     </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                </div>
+            </section>
+
+            {/* PROCESS */}
+            <section className="py-20 px-6 border-t border-white/5">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-extrabold mb-4">Our Development Process</h2>
+                        <p className="text-white/70 max-w-2xl mx-auto">A proven methodology that ensures quality, efficiency, and successful project delivery.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {process.map((step, index) => (
+                            <motion.div
+                                key={step.step}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className="text-center"
+                            >
+                                <div className="w-12 h-12 mx-auto mb-4 bg-teal-500 text-black rounded-full flex items-center justify-center font-bold text-lg">
+                                    {step.step}
+                                </div>
+                                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                                <p className="text-white/70 text-sm">{step.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* FEATURES */}
+            <section className="py-20 px-6 border-t border-white/5">
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h2 className="text-3xl font-extrabold mb-6">Essential Features We Deliver</h2>
+                            <p className="text-white/70 mb-8">Every web development project includes comprehensive features and best practices to ensure success.</p>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {features.map((feature, index) => (
+                                    <motion.div
+                                        key={feature}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6, delay: index * 0.05 }}
+                                        className="flex items-center gap-3"
+                                    >
+                                        <FaCheck className="text-teal-400 text-sm" />
+                                        <span className="text-white/80">{feature}</span>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="bg-gradient-to-br from-neutral-800 to-neutral-700 rounded-xl p-8 border border-white/5"
+                        >
+                            <h3 className="text-xl font-bold mb-4">Ready to Start Your Web Development Project?</h3>
+                            <p className="text-white/70 mb-6">Let's discuss your vision and create something amazing together.</p>
+                            <Link to="/#contact" className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-black font-semibold rounded-lg hover:scale-105 transition">
+                                Start Your Web Development Project
+                                <FaArrowRight />
+                            </Link>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* RELATED SERVICES */}
+            <section className="py-20 px-6 border-t border-white/5">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-extrabold mb-4">Related Services</h2>
+                        <p className="text-white/70 max-w-2xl mx-auto">Explore complementary services that can enhance your web development project.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {relatedServices.map((service, index) => (
+                            <motion.div
+                                key={service.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                                className="group cursor-pointer"
+                            >
+                                <Link to={service.link}>
+                                    <div className="bg-gray-800 border border-gray-700 rounded-xl p-6 h-full hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
+                                        <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                                            <div className="text-white text-xl">
+                                                {service.icon}
+                                            </div>
+                                        </div>
+                                        <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
+                                        <div className="flex items-center text-blue-400 font-medium group-hover:text-blue-300 transition-colors duration-300">
+                                            Learn More
+                                            <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className="py-20 px-6 border-t border-white/5">
+                <div className="max-w-4xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-extrabold mb-4">Frequently Asked Questions</h2>
+                        <p className="text-white/70">Common questions about our web development services.</p>
+                    </div>
+
+                    <div className="space-y-6">
+                        {faqs.map((faq, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className="bg-gray-800/50 border border-gray-700 rounded-xl p-6"
+                            >
+                                <h3 className="text-lg font-bold mb-3 text-teal-300">{faq.question}</h3>
+                                <p className="text-white/70">{faq.answer}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ENHANCED FOOTER */}
+            <footer className={`py-16 border-t ${theme === 'dark' ? 'bg-neutral-900 border-white/5' : 'bg-gray-50 border-gray-200'}`}>
+                <div className="max-w-6xl mx-auto px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                        {/* Company Info */}
+                        <div>
+                            <h3 className="text-lg font-extrabold mb-4">Suchna Tech & Solutions</h3>
+                            <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>
+                                Premium IT solutions for modern businesses. Transform your digital presence with our innovative services.
+                            </p>
+                        </div>
+
+                        {/* Quick Links */}
+                        <div>
+                            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+                            <ul className="space-y-2">
+                                <li><Link to="/" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Home</Link></li>
+                                <li><Link to="/about" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>About</Link></li>
+                                <li><Link to="/services" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Services</Link></li>
+                                <li><Link to="/contact" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Contact</Link></li>
+                            </ul>
+                        </div>
+
+                        {/* Services */}
+                        <div>
+                            <h3 className="text-lg font-bold mb-4">Services</h3>
+                            <ul className="space-y-2">
+                                <li><Link to="/services/web-development" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Web Development</Link></li>
+                                <li><Link to="/services/saas-development" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>SaaS/CRM Development</Link></li>
+                                <li><Link to="/services/ui-ux-branding" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Graphic Designing</Link></li>
+                                <li><Link to="/services/digital-marketing" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Social Media Marketing</Link></li>
+                            </ul>
+                        </div>
+
+                        {/* Connect With Us */}
+                        <div>
+                            <h3 className="text-lg font-bold mb-4">Connect With Us</h3>
+                            <div className="flex gap-4">
+                                {/* LinkedIn */}
+                                <a href="https://www.linkedin.com/company/109125253/admin/dashboard/" target="_blank" rel="noopener noreferrer" className={`w-10 h-10 rounded-full flex items-center justify-center transition hover:bg-teal-500 ${theme === 'dark' ? 'bg-white/10' : 'bg-black/10'}`}>
+                                    <svg className={`w-5 h-5 ${theme === 'dark' ? 'fill-white' : 'fill-black'} hover:fill-black`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </a>
+                                {/* Twitter/X */}
+                                <a href="https://x.com/SuchnaT_S" target="_blank" rel="noopener noreferrer" className={`w-10 h-10 rounded-full flex items-center justify-center transition hover:bg-teal-500 ${theme === 'dark' ? 'bg-white/10' : 'bg-black/10'}`}>
+                                    <svg className={`w-5 h-5 ${theme === 'dark' ? 'fill-white' : 'fill-black'} hover:fill-black`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                    </svg>
+                                </a>
+                                {/* Instagram */}
+                                <a href="https://www.instagram.com/5uchna/" target="_blank" rel="noopener noreferrer" className={`w-10 h-10 rounded-full flex items-center justify-center transition hover:bg-teal-500 ${theme === 'dark' ? 'bg-white/10' : 'bg-black/10'}`}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                  </svg>
+                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={`border-t ${theme === 'dark' ? 'border-white/5' : 'border-gray-200'} pt-8 text-center`}>
+                        <p className={`text-sm ${theme === 'dark' ? 'text-white/60' : 'text-black/60'}`}>
+                            © 2024 Suchna Tech & Solutions. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </footer>
         </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20 px-6 border-t border-white/5">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold mb-4">Frequently Asked Questions</h2>
-            <p className="text-white/70">Common questions about our web development services.</p>
-          </div>
-
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-800/50 border border-gray-700 rounded-xl p-6"
-              >
-                <h3 className="text-lg font-bold mb-3 text-teal-300">{faq.question}</h3>
-                <p className="text-white/70">{faq.answer}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="border-t border-white/5 mt-12">
-        <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="logo" className="h-10 w-20 object-contain" />
-            <div>
-              <div className="font-bold">Suchna Tech & Solutions</div>
-              <div className="text-xs text-white/60">Simple • Smart • Suchna</div>
-            </div>
-          </div>
-
-          <div className="text-sm text-white/60">© {new Date().getFullYear()} Suchna Consulting & Co — All rights reserved.</div>
-        </div>
-      </footer>
-    </div>
-  );
+    );
 };
 
 export default WebDevelopment;
