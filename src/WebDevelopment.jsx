@@ -347,16 +347,18 @@ const WebDevelopment = () => {
                             </ul>
                         </div>
 
-                        {/* Services */}
-                        <div>
-                            <h3 className="text-lg font-bold mb-4">Services</h3>
-                            <ul className="space-y-2">
-                                <li><Link to="/services/web-development" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Web Development</Link></li>
-                                <li><Link to="/services/saas-development" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>SaaS/CRM Development</Link></li>
-                                <li><Link to="/services/ui-ux-branding" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Graphic Designing</Link></li>
-                                <li><Link to="/services/digital-marketing" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Social Media Marketing</Link></li>
-                            </ul>
-                        </div>
+                {/* Services */}
+                <div>
+                  <h3 className="text-lg font-bold mb-4">Services</h3>
+                  <ul className="space-y-2">
+                    <li><Link to="/services/web-development" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Web Development</Link></li>
+                    <li><Link to="/services/saas-development" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>SaaS/CRM Development</Link></li>
+                    <li><Link to="/services/ai-integration" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>AI Integration</Link></li>
+                    <li><Link to="/services/ui-ux-branding" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>UI/UX & Branding</Link></li>
+                    <li><Link to="/services/digital-marketing" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Digital Marketing</Link></li>
+                    <li><Link to="/services/consulting" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Consulting</Link></li>
+                  </ul>
+                </div>
 
                         {/* Connect With Us */}
                         <div>

@@ -212,19 +212,22 @@ const About = () => {
                   initials: 'DP',
                   name: 'Dev Patel',
                   role: 'Founder & CEO',
-                  desc: '15+ years in technology consulting with expertise in digital transformation and business strategy.'
+                  image: '/team/Dev_Patel.jpeg',
+                  desc: 'Myself Dev Patel, a 21-year-old IT professional and full-stack engineer. I am the Founder and CEO of Suchna Consulting and Suchna Tech & Solutions, with Suchna Consulting as the parent company. I specialize in building innovative, scalable technology solutions.'
                 },
                 {
                   initials: 'HR',
                   name: 'Hitendra Rathod',
                   role: 'Co-Founder & AI-Expert',
-                  desc: 'Full-stack architect passionate about building scalable, innovative solutions for modern businesses.'
+                  image: '/team/hitendra_rathod.png',
+                  desc: 'Myself Hitendra Rathod, Co-Founder and AI Expert at Suchna Tech & Solutions. I am a passionate Full-stack architect and AI specialist, dedicated to building intelligent, scalable solutions that drive innovation for modern businesses.'
                 },
                 {
                   initials: 'SP',
                   name: 'Sach Panchal',
                   role: 'Head of Design',
-                  desc: 'Award-winning designer focused on creating intuitive, beautiful user experiences.'
+                  image: '/team/sach_panchal.png',
+                  desc: 'Myself Sach Panchal, Head of Design at Suchna Tech & Solutions. I am an award-winning designer focused on creating intuitive, beautiful user experiences that bring visions to life.'
                 },
                 
               ].map((member, index) => (
@@ -236,8 +239,12 @@ const About = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-black/30 rounded-xl p-6 border border-white/5 transition-all duration-300 hover:border-teal-500 hover:shadow-lg hover:shadow-teal-500/20"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-white">{member.initials}</span>
+                  <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden border-2 border-teal-500/50">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="font-bold text-lg mb-1">{member.name}</h3>
                   <p className="text-teal-300 text-sm font-semibold mb-3">{member.role}</p>
@@ -290,16 +297,18 @@ const About = () => {
               </ul>
             </div>
 
-            {/* Services */}
-            <div>
-              <h3 className="text-lg font-bold mb-4">Services</h3>
-              <ul className="space-y-2">
-                <li><Link to="/services/web-development" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Web Development</Link></li>
-                <li><Link to="/services/saas-development" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>SaaS/CRM Development</Link></li>
-                <li><Link to="/services/ui-ux-branding" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Graphic Designing</Link></li>
-                <li><Link to="/services/digital-marketing" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Social Media Marketing</Link></li>
-              </ul>
-            </div>
+                {/* Services */}
+                <div>
+                  <h3 className="text-lg font-bold mb-4">Services</h3>
+                  <ul className="space-y-2">
+                    <li><Link to="/services/web-development" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Web Development</Link></li>
+                    <li><Link to="/services/saas-development" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>SaaS/CRM Development</Link></li>
+                    <li><Link to="/services/ai-integration" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>AI Integration</Link></li>
+                    <li><Link to="/services/ui-ux-branding" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>UI/UX & Branding</Link></li>
+                    <li><Link to="/services/digital-marketing" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Digital Marketing</Link></li>
+                    <li><Link to="/services/consulting" className={`text-sm hover:text-teal-300 transition ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>Consulting</Link></li>
+                  </ul>
+                </div>
 
             {/* Connect With Us */}
             <div>
