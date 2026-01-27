@@ -42,7 +42,7 @@ const Work = () => {
       description: 'A personal portfolio website showcasing my skills, projects, and experience as a web developer, built with modern web technologies.',
       image: '/Portfolio.png',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      liveUrl: 'https://suchnaconsulting26-dotcom.github.io/',
+      liveUrl: 'https://suchnaconsulting26-dotcom.github.io/Portfolio/',
       githubUrl: '#',
       category: 'Web Development'
     },
